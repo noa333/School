@@ -11,6 +11,7 @@ public class Course {
     private Type type;
     private int period;
     private ArrayList<Student> students = new ArrayList<Student>();
+    private int gpa;
     private Teacher theTeacher;
     
     public static Course addCourse(String _name,
@@ -33,13 +34,13 @@ public class Course {
         period = _period;
     }   
 
-    public boolean addStudent(Student _student)
+    public boolean addStudent(Student _student, double _gradeScore)
     {
         if (!setStudentOK(_student))
             return(false);
         if (!_student.setCourseOK(this))
             return(false);
-        _student.setCourseDoIt(this);
+        _student.setCourseDoIt(this,_gradeScore);
         setStudentDoIt(_student);
         return(true);
     }  
@@ -115,7 +116,18 @@ public class Course {
     public int getNumStudents()
     {
         return(students.size());
-    }    
+    }
+    
+    public Teacher getTeacher(int _index)
+    {
+        return(theTeacher);
+    }
+    public double getGpa(int _index)
+    {
+        return(gpa);
+    }
+    
+    
     public static void printNames()
     {
         System.out.println("===printNames===");
@@ -129,3 +141,4 @@ public class Course {
         return(name + " " + type + " " + period);
     }    
 }
+ 

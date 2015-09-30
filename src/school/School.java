@@ -19,12 +19,12 @@ public class School {
         Course biology =  Course.addCourse("Biology", Course.Type.Science, 2);       
         Course worldHistory =  Course.addCourse("WorldHistory", Course.Type.History, 2);       
 
-        geom.addStudent(bobby);
-        photo.addStudent(jill);
-        biology.addStudent(ann);
-        worldHistory.addStudent(sean);
-        worldHistory.addStudent(ann);
-        worldHistory.addStudent(joe);
+        geom.addStudent(bobby,3.3);
+        photo.addStudent(jill,2.7);
+        biology.addStudent(ann,2.3);
+        worldHistory.addStudent(sean,3.8);
+        worldHistory.addStudent(ann,3.1);
+        worldHistory.addStudent(joe,4.0);
          
         geom.addTeacher(price);
         photo.addTeacher(anderson);
@@ -39,5 +39,7 @@ public class School {
         Teacher.printNames();
         
         hudson.printStudentsNames();
+        bobby.printTeachersNames();
     }
 }
+ 
